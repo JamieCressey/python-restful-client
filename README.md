@@ -33,9 +33,20 @@ Two helpers are built in to verify the success of requests made. `ok()` checks f
 
     req = api.get('/books/')
     if req.ok():
-      print 'Success!'
+        print 'Success!'
     else:
-      print req.errors()
+        print req.errors()
+
+## Extending the client
+
+The client can be extended to be more application specific, e.g. `api.create_book('Twilight', 'Stephenie Meyer')`:
+
+    def create_book(title, author):
+        _data = {
+            'title': title,
+            'author': author,
+        }
+        return self.post('/books/', _data)
 
 ## Contributing
 
