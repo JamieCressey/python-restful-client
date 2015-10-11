@@ -2,7 +2,7 @@ from RestfulClient import __version__
 from setuptools import setup, find_packages
 
 setup(
-	name = "restful-client",
+	name = "RestfulClient",
 	version = __version__,
 	description = "Generic RESTful API Client",
 	author = "Jamie Cressey",
