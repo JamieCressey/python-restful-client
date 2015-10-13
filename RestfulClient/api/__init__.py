@@ -80,7 +80,6 @@ class Response(object):
 	def ok(self):
 		import requests
 		return self.response.status_code == requests.codes.ok
-		#return self.response.status_code == 200
 
 	def errors(self):
 		if self.ok():
