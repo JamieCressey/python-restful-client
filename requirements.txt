@@ -1,4 +1,4 @@
-requests==2.5.0
-simplejson==3.4.0
-distribute==0.6.34
-unittest2==0.5.1
+requests==2.8.0
+simplejson==3.8.0
+distribute==0.7.3
+unittest2==1.1.0
