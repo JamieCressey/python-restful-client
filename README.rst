@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/JamieCressey/python-restful-client.svg)](https://travis-ci.org/JamieCressey/python-restful-client)
+
 # Generic RESTful Python client
 
 A generic RESTful Python client for interacting with JSON APIs.

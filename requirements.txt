@@ -1,2 +1,4 @@
 requests==2.5.0
 simplejson==3.4.0
+distribute==0.6.34
+unittest2==0.5.1
