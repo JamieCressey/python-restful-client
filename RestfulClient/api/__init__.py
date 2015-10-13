@@ -35,20 +35,28 @@ class ApiClient(object):
 		return {
 			'X-Authentication-Key': self.api_key,
 			'X-Authentication-Nonce': str(nonce),
-			'X-Authentication-Signature': b64encode(new(self.api_secret,
-								msg=str(nonce),
+			'X-Authentication-Signature': b64encode(new(self.api_secret.encode(),
+								msg=str(nonce).encode(),
 								digestmod=sha256).digest()),
 			'User-Agent': "PythonClient/{0} ({1}; Python {2})".format(__version__, 
 										 platform(True), 
 										 python_version())
 		}
 
+	@staticmethod
+	def merge_dicts(*dict_args):
+		result = {}
+		for dictionary in dict_args:
+			result.update(dictionary)
+
+		return result
+
 	def request(self, method, path, data = {}, headers = {}):
 		from requests import request
 
-		url = self.api_uri + path
+		url = '{}{}'.format(self.api_uri, path)
 		params = {}
-		headers = dict(self.set_headers().items() + headers.items())
+		headers = self.merge_dicts(self.set_headers(), headers)
 
 		if method == "GET":
 			params.update(data)
