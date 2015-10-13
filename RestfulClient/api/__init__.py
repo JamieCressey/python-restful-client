@@ -54,7 +54,7 @@ class ApiClient(object):
 	def request(self, method, path, data = {}, headers = {}):
 		from requests import request
 
-		url = '{}{}'.format(self.api_uri, path)
+		url = '{0}{1}'.format(self.api_uri, path)
 		params = {}
 		headers = self.merge_dicts(self.set_headers(), headers)
 
