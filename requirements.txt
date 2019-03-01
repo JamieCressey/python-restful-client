@@ -1,4 +1,4 @@
-requests==2.8.0
+requests>=2.20.0
 simplejson==3.8.0
 distribute==0.7.3
 unittest2==1.1.0
